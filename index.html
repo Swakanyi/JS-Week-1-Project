@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Budget Tracker</h1>
+
+    <!-- income -->
+    <div class="section">
+            <h2>Income</h2>
+            <div class="input-group">
+            <label for="income-description">Description</label>
+            <input type="text" id="income-description" placeholder="e.g salary">
+            </div>
+            <div class="input-group">
+            <label for="income-amount">Amount Ksh</label>
+            <input type="number" id="income-amount" placeholder="e.g 120000">
+            </div>
+        <div class="btn-group">
+            <button onclick="addIncome()">Add Income</button>
+        </div>
+
+    </div>
+
+    <!-- Expenses -->
+     <div class="section">
+        <h2>Expenses</h2>
+        <div class="input-group">
+            <label for="expense-description">Description</label>
+            <input type="text" id="expense-description" paceholder="e.g Rent">
+        </div>
+        <div class="input-group">
+            <label for="expense-category">Category</label>
+            <select id="expense-category">
+                <option value="housing">Housing</option>
+                <option value="shopping">Shopping</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="Transport">Transport</option>
+                <option value="others">Others</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="expense-amount">Amount Ksh</label>
+            <input type="number" id="expense-amount" placeholder="e.g 10000">
+
+        </div>
+        <div class="btn-group">
+            <button onclick="addExpense()">Add Expense</button>
+
+        </div>
+
+     </div>
+
+    <!-- filter -->
+    <div class="filters">
+    <button onclick="filterTransactions('all')">All</button>
+    <button onclick="filterTransactions('income')">Income</button>
+    <button onclick="filterTransactions('expense')">Expenses</button>
+    </div>
+
+
+     <!-- transaction history -->
+
+     <div class="table">
+        <h2>Transaction History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+
+            <tbody id="transaction-history">
+                <!-- transactions will be here -->
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+     <div class="summary">
+        <h2>Budget Summary</h2>
+        <p>Total Income: Ksh <span id="total-income">50000</span> </p>
+        <p>Total Expenses: Ksh <span id="total-expenses">0</span> </p>
+        <p>Balance: Ksh <span id="balance">0</span> </p>
+
+     </div>
+     <div class="clear-btn">
+        <button onclick="clearAll()">Clear All</button>
+
+     </div>
+
+<script src="script.js"></script>
+</body>
+</html>
